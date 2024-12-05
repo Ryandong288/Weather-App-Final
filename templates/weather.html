@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather in {{ weather['name'] }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #87CEEB, #E0F6FF);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .weather-card {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 1rem;
+        }
+        .weather-info {
+            margin-bottom: 1.5rem;
+        }
+        .temperature {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #FF6347;
+            margin-bottom: 0.5rem;
+        }
+        .condition {
+            font-size: 1.2rem;
+            color: #4682B4;
+            text-transform: capitalize;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .back-link:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="weather-card">
+        <h1>Weather in {{ weather['name'] }}</h1>
+        <div class="weather-info">
+            <img src="{{icon_path}}" alt="Weather Icon" style="width: 100px; height: auto;">
+            <div class="temperature">{{ "%.1f"|format(weather['main']['temp']) }}°F</div>
+            <div class="condition">{{ weather['weather'][0]['description'] }}</div>
+        </div>
+        <a href="/" class="back-link">Back to Search</a>
+    </div>
+</body>
+</html>

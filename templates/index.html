@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dong Weather Central</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #87CEEB, #E0F6FF);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            margin-top: 1rem;
+        }
+        input[type="text"] {
+            padding: 0.5rem;
+            width: 60%;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            padding: 0.5rem 1rem;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="/static/donglogo.png" alt="Logo" width="300">
+        <h1>Dong Weather Central</h1>
+        <p>Enter a city or zip code to get the weather forecast</p>
+        <form action="/weather" method="get">
+            <input type="text" name="location" placeholder="City or Zip Code" required>
+            <button type="submit">Get Weather</button>
+        </form>
+    </div>
+</body>
+</html>
